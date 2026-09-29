@@ -1,0 +1,227 @@
+
+/* Rodapé da Página */
+footer{
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 42px clamp(20px, 7vw, 100px) 28px;
+    position: relative;
+    color: white;
+    z-index: 10;
+    border-top: 1px solid rgba(105, 207, 255, .35);
+}
+
+footer .Logo-Footer{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    gap: 40px;
+}
+
+footer .Logo-Footer div{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+footer .Logo-Footer h3{
+    margin: 0;
+    color: #ffffff;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-align: left;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .3);
+}
+
+footer .Logo-Footer cite{
+    color: #a9d9f5;
+    font-family: "Segoe UI", sans-serif;
+    font-size: .9rem;
+    font-style: normal;
+    letter-spacing: .04em;
+}
+
+footer .Logo-Footer .nav-footer{
+    width: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 22px;
+    font-family: "Segoe UI", sans-serif;
+    text-align: right;
+}
+
+footer .Logo-Footer .nav-footer p{
+    width: 100%;
+    margin: 0 0 4px;
+    color: #7edcff;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+/* Links de Navegação do Rodapé */
+footer .Logo-Footer .nav-footer a{
+    color: #d8eaf7;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+}
+
+footer .Logo-Footer .nav-footer a:hover{
+    color: #62d6ff;
+    transform: translateY(-2px);
+}
+
+/* Conteiner "Redes Sociais" do Rodapé */
+footer .Midia{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 130px;
+    padding-top: 38px;
+}
+
+footer .Midia .nossas-redes-sociais{
+    width: 100%;
+    margin: 0;
+    color: #a9c8dc;
+    font-family: "Segoe UI", sans-serif;
+    font-size: .9rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+}
+
+/* Conteiner dos Itens de R.S */
+footer .Midia .social{
+    text-decoration: none;
+    position: relative;
+    transition: .3s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 8px 24px #00000055;
+
+    background-color: rgb(155, 155, 155);
+    padding: 16px;
+    cursor: pointer;
+}
+
+/* Animação do Conteiner*/
+footer .Midia .social:hover {
+    width: 180px;
+    border-radius: 999px;
+}
+
+/* Animação de Esconder/Aparecer o Texto, Imagem e as Cores */
+footer .Midia .social:hover .text{
+    transform: scale(1);
+}
+
+footer .Midia .social:hover .icon{
+    transform: scale(0);
+}
+
+footer .Midia .social:hover:before {
+    opacity: 1;
+}
+
+footer .Midia .social::before {
+    transition: .3s;
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(135deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: inherit;
+}
+
+/* TikTok */
+footer .Midia .tiktok::before {
+    background-image: linear-gradient(135deg, var(--cor3), var(--cor1), var(--cor2), var(--cor3));
+}
+
+/* Texto da rede social */
+footer .Midia .social .text{
+    color: rgb(255, 255, 255);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    transform: scale(0);
+    transition: .3s;
+}
+
+/* Comportamento do Conteiner da IMG rede social */
+footer .Midia .social .icon{
+    transition: .3s;
+    position: absolute;
+}
+
+/* Imagem da rede social */
+footer .Midia .social .icon img{
+    width: 32px;
+}
+
+html.mobile-device footer .Midia .social,
+html.mobile-device footer .Midia .social:hover{
+    width: 56px;
+    border-radius: 50%;
+}
+
+html.mobile-device footer .Midia .social .text,
+html.mobile-device footer .Midia .social:hover .text{
+    display: none;
+}
+
+html.mobile-device footer .Midia .social .icon,
+html.mobile-device footer .Midia .social:hover .icon{
+    transform: none;
+}
+
+@media (max-width: 650px){
+    footer{
+        min-height: 500px;
+        padding: 34px 20px 24px;
+    }
+
+    footer .Logo-Footer{
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    footer .Logo-Footer .nav-footer{
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    footer .Logo-Footer .nav-footer p{
+        text-align: left;
+    }
+
+    footer .Midia{
+        gap: 12px;
+    }
+}

@@ -1,0 +1,1336 @@
+/* Base responsiva compartilhada */
+:root{
+    --layout-gutter: clamp(16px, 4vw, 72px);
+    --content-width: min(100% - (var(--layout-gutter) * 2), 1280px);
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+*** End of File
+
+.pagina-principal #section1,
+.pagina-principal #section2,
+.pagina-principal #section2-1,
+.pagina-principal #section3,
+.pagina-principal .divisao-de-campos{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Navegacao e galeria da pagina principal ate 640px */
+@media (max-width: 1024px){
+    .contacto-layout{
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto{
+        height: 860px;
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .section-copy--standard{
+        top: 50%;
+        left: 12px;
+        width: calc(100% - 24px);
+        padding: 28px 24px;
+    }
+
+    .pagina-principal #section2 .section-copy--standard p,
+    .pagina-principal #section2 .section-copy--standard .publico-item p{
+        position: static;
+        width: auto;
+        padding: 0;
+        background: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .pagina-principal #section2 .publicos-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contacto-card{
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
+        transition-duration: .18s;
+    }
+
+
+    .contacto-card:hover{
+        transform: translateY(-2px);
+    }
+
+    .contacto-lista li:hover{
+        transform: translateX(2px);
+    }
+}
+
+@media (max-width: 640px){
+    .pagina-interna .nav-header{
+        width: calc(100% - 24px);
+        margin: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .pagina-interna .nav-header a{
+        flex: 1 1 auto;
+        padding: 9px 10px;
+        text-align: center;
+        font-size: clamp(.74rem, 2.8vw, .88rem);
+    }
+
+    body.pagina-interna-body button#whatsapp{
+        right: 14px;
+        bottom: 16px;
+        transform: none;
+    }
+
+    body.pagina-interna-body button#whatsapp .block-whatsapp,
+    body.pagina-interna-body button#whatsapp .block-whatsapp:hover{
+        width: 64px;
+        height: 64px;
+    }
+
+    body.pagina-interna-body button#whatsapp .block-whatsapp img,
+    body.pagina-interna-body button#whatsapp .block-whatsapp:hover img{
+        width: 42px;
+        transform: scale(1);
+    }
+
+    body.pagina-interna-body button#whatsapp .block-whatsapp p{
+        display: none;
+    }
+
+    .sobre-destaques,
+    .processo-lista{
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-sobre{
+        margin-top: 36px;
+        padding: 38px 22px 48px;
+        text-align: left;
+    }
+
+    .pagina-legal{
+        padding: 38px 22px 48px;
+    }
+
+    .pagina-servicos{
+        width: calc(100% - 24px);
+        margin-top: 36px;
+        margin-bottom: 44px;
+        padding: 38px 22px 48px;
+    }
+
+    .pagina-servicos > h2{
+        margin-bottom: 20px;
+    }
+
+    .pagina-servicos .servicos-lista{
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+    .pagina-servicos .servicos-lista article{
+        min-height: 0;
+        padding: 21px;
+    }
+
+    .pagina-servicos > .etiqueta-seccao,
+    .pagina-servicos > h2,
+    .pagina-servicos > p{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .pagina-contacto{
+        width: calc(100% - 24px);
+        margin-top: 36px;
+        margin-bottom: 44px;
+        padding: 34px 20px 40px;
+    }
+
+    .contacto-layout{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contacto-card{
+        padding: 20px 18px;
+    }
+
+    .contacto-card,
+    .contacto-card:hover,
+    .contacto-lista li,
+    .botao-enviar,
+    .botao-whatsapp,
+    .botao-enviar:hover,
+    .botao-whatsapp:hover,
+    .contacto-whatsapp,
+    .contacto-whatsapp:hover{
+        transform: none !important;
+        box-shadow: none !important;
+        transition: none !important;
+    }
+
+    .contacto-card{
+        animation: none !important;
+    }
+
+    .contacto-lista li{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .contacto-lista strong{
+        text-align: left;
+    }
+
+    .contacto-acao{
+        padding: 16px;
+    }
+
+    .contacto-acao p{
+        min-height: 0;
+    }
+
+    .contacto-acoes{
+        flex-direction: column;
+    }
+
+    .pagina-legal > h2{
+        font-size: 2rem;
+    }
+
+    .legal-seccao{
+        margin-top: 26px;
+        padding-top: 20px;
+    }
+
+    .legal-seccao p{
+        font-size: .94rem;
+        line-height: 1.65;
+    }
+
+    .pagina-sobre > .etiqueta-seccao,
+    .pagina-sobre > h2{
+        text-align: center;
+    }
+
+    .pagina-sobre > p{
+        text-align: left;
+    }
+
+    .pagina-sobre > h2{
+        margin-bottom: 22px;
+    }
+
+    .sobre-destaques{
+        margin: 34px 0 42px;
+        gap: 14px;
+    }
+
+    .sobre-destaques article{
+        min-height: 0;
+        padding: 21px;
+    }
+
+    .como-trabalhamos{
+        padding-top: 28px;
+    }
+
+    .como-trabalhamos > .etiqueta-seccao,
+    .como-trabalhamos > h3{
+        text-align: center;
+    }
+
+    .processo-lista{
+        gap: 12px;
+    }
+
+    .processo-lista article{
+        padding: 18px;
+    }
+
+    .pagina-sobre .sobre-destaques article,
+    .pagina-sobre .processo-lista article{
+        transition-duration: .16s;
+    }
+
+    .pagina-principal .nav-header{
+        width: calc(100% - 24px);
+        margin: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .pagina-principal .nav-header a{
+        flex: 1 1 auto;
+        padding: 9px 10px;
+        text-align: center;
+        font-size: clamp(.74rem, 2.8vw, .88rem);
+    }
+
+    .pagina-principal #Image-changer-container{
+        display: block;
+        position: relative;
+        min-height: 470px;
+        padding: 16px;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer{
+        position: absolute;
+        width: auto;
+        min-width: 0;
+        height: 175px;
+        margin: 0;
+        flex: none;
+        transition: none;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:nth-child(1){
+        top: 16px;
+        left: 16px;
+        right: 51%;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:nth-child(2){
+        top: 16px;
+        left: 51%;
+        right: 16px;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:nth-child(3){
+        top: 207px;
+        left: 16px;
+        right: 16px;
+        height: 225px;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:hover,
+    .pagina-principal #Image-changer-container:has(.Image-changer:hover) .Image-changer:not(:hover){
+        flex-grow: unset;
+        transform: none;
+        opacity: 1;
+    }
+
+    .pagina-principal #section2,
+    .pagina-principal #section2-1{
+        height: 780px;
+    }
+
+    .pagina-principal #section1{
+        background-position: 58% center;
+    }
+
+    .pagina-principal #section2{
+        background-position: 52% center;
+    }
+
+    .pagina-principal #section2-1{
+        background-position: 58% center;
+    }
+
+    .pagina-principal #section3{
+        background-position: 54% center;
+    }
+
+    .pagina-principal .dv2,
+    .pagina-principal .dv3,
+    .pagina-principal .dv4{
+        background-position: center center;
+    }
+
+    .pagina-principal .dv2{
+        background-image: linear-gradient(to bottom, rgba(0, 61, 97, .94), rgba(1, 9, 25, .92));
+    }
+
+    .pagina-principal .dv3{
+        background-image: linear-gradient(to bottom, rgba(1, 9, 25, .94), rgba(1, 18, 45, .9));
+    }
+
+    .pagina-principal .dv4{
+        background-image: linear-gradient(to bottom, rgba(1, 18, 45, .92), rgba(2, 8, 23, .96));
+    }
+
+    .pagina-principal .div5{
+        background-image: linear-gradient(to bottom, rgba(2, 8, 23, .96), rgba(3, 14, 35, .014));
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto,
+    .pagina-principal #section2-1 .container-imagens-animadas .imagem-e-texto{
+        height: 680px;
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto .img1,
+    .pagina-principal #section2-1 .container-imagens-animadas .imagem-e-texto .img2{
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        object-fit: contain;
+        background: rgba(1, 12, 31, .72);
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto p{
+        top: 50%;
+        left: 50%;
+        width: min(88%, 560px);
+        text-align: center;
+        background: rgba(1, 12, 31, .48);
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    .pagina-principal #section2:hover .container-imagens-animadas .imagem-e-texto p{
+        transform: translate(-50%, -50%);
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto .section-copy--standard p,
+    .pagina-principal #section2:hover .container-imagens-animadas .imagem-e-texto .section-copy--standard p{
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: auto !important;
+        padding: 0 !important;
+        background: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .pagina-principal button#whatsapp{
+        right: 14px;
+        bottom: 16px;
+        transform: none;
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp,
+    .pagina-principal button#whatsapp .block-whatsapp:hover{
+        width: 64px;
+        height: 64px;
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp img,
+    .pagina-principal button#whatsapp .block-whatsapp:hover img{
+        width: 42px;
+        transform: scale(1);
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp:hover p{
+        display: none;
+    }
+
+    footer .Logo-Footer .nav-footer{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        justify-content: initial;
+        gap: 10px 18px;
+        text-align: left;
+    }
+
+    footer .Logo-Footer .nav-footer p{
+        grid-column: 1 / -1;
+    }
+
+    footer .Midia{
+        display: grid;
+        grid-template-columns: repeat(4, 56px);
+        justify-content: center;
+        gap: 12px;
+        padding-top: 38px;
+    }
+
+    footer .Midia .nossas-redes-sociais{
+        position: static;
+        grid-column: 1 / -1;
+    }
+
+    footer .Midia .social{
+        width: 56px;
+        height: 56px;
+    }
+
+    footer .Midia .social .text{
+        display: none;
+    }
+
+    .pagina-principal #section3 .conteiner-classificacao-de-clientes{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 18px 0 8px;
+    }
+
+    .pagina-principal #section3 .cliente-classificado{
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 205px;
+        padding: 22px 18px 18px;
+        border-radius: 16px;
+    }
+
+    .pagina-principal #section3 .nome-de-cliente-classificado{
+        font-size: 17px;
+    }
+
+    .pagina-principal #section3 .comentario-do-cliente-classificado{
+        margin: 10px 0 14px;
+        font-size: .88rem;
+        line-height: 1.5;
+    }
+
+    .pagina-principal #section3 .classificação-de-estrelas{
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Regras finais para manter a composição fluida em qualquer viewport. */
+@media (min-width: 601px){
+    .pagina-principal #Image-changer-container{
+        display: flex;
+        min-height: 390px;
+        height: auto;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer{
+        position: relative;
+        inset: auto;
+        width: 0;
+        height: 320px;
+        flex: 1 1 0 !important;
+        flex-grow: 1 !important;
+        transition: transform .55s ease, filter .55s ease, border-color .55s ease;
+    }
+}
+
+@media (max-width: 1024px){
+    .pagina-principal #section1,
+    .pagina-principal #section2,
+    .pagina-principal #section2-1,
+    .pagina-principal #section3{
+        height: auto;
+    }
+}
+
+@media (max-width: 600px){
+    .pagina-principal #section1,
+    .pagina-principal #section2,
+    .pagina-principal #section2-1,
+    .pagina-principal #section3{
+        height: auto;
+    }
+
+    .pagina-principal #Image-changer-container{
+        min-height: 430px;
+        height: 430px;
+    }
+}
+
+@media (max-width: 600px){
+    .pagina-principal #section2 .container-imagens-animadas .img1,
+    .pagina-principal #section2-1 .container-imagens-animadas .img2{
+        opacity: 1 !important;
+        filter: none !important;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 480px){
+    .pagina-principal .nav-header a{
+        flex-basis: 30%;
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto,
+    .pagina-principal #section2-1 .container-imagens-animadas .imagem-e-texto{
+        height: 620px;
+    }
+
+    .pagina-principal button#whatsapp{
+        right: 12px;
+        bottom: 14px;
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp,
+    .pagina-principal button#whatsapp .block-whatsapp:hover{
+        width: 58px;
+        height: 58px;
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp img,
+    .pagina-principal button#whatsapp .block-whatsapp:hover img{
+        width: 38px;
+    }
+
+    footer .Midia{
+        grid-template-columns: repeat(3, 56px);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 640px){
+    .pagina-principal .nav-header{
+        gap: 6px;
+    }
+
+    .pagina-principal .nav-header a{
+        flex: 0 1 auto;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .pagina-principal button#whatsapp{
+        right: 14px;
+        bottom: 16px;
+    }
+
+    .pagina-principal #section3 .conteiner-classificacao-de-clientes{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .pagina-principal #section3 .cliente-classificado{
+        min-height: 190px;
+        padding: 20px 16px 16px;
+    }
+}
+
+/* Telemoveis compactos: ate 360px */
+@media (max-width: 360px){
+    header{
+        min-height: 104px;
+        height: auto;
+        padding: 18px 12px;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    header h1{
+        font-size: 1.35rem;
+    }
+
+    header cite{
+        font-size: .78rem;
+    }
+
+    .nav-header{
+        width: calc(100% - 24px);
+        margin: 12px;
+        flex-wrap: wrap;
+    }
+
+    .nav-header a{
+        padding: 8px 9px;
+        font-size: .78rem;
+        text-align: center;
+    }
+
+    body.pagina-interna-body .nav-header{
+        width: calc(100% - 24px);
+        margin: 12px;
+    }
+
+    body.pagina-interna-body .nav-header a{
+        flex: 1 1 28%;
+        padding: 7px 5px;
+        font-size: .72rem;
+    }
+
+    body.pagina-interna-body button#whatsapp{
+        right: 10px;
+        bottom: 12px;
+    }
+
+    body.pagina-interna-body button#whatsapp .block-whatsapp,
+    body.pagina-interna-body button#whatsapp .block-whatsapp:hover{
+        width: 52px;
+        height: 52px;
+    }
+
+    body.pagina-interna-body button#whatsapp .block-whatsapp img,
+    body.pagina-interna-body button#whatsapp .block-whatsapp:hover img{
+        width: 34px;
+    }
+
+    body.pagina-interna-body .pagina-interna{
+        width: calc(100% - 24px);
+        margin-top: 28px;
+        margin-bottom: 44px;
+        padding: 30px 16px 38px;
+        border-radius: 18px;
+    }
+
+    body.pagina-interna-body .pagina-servicos{
+        width: calc(100% - 24px);
+        margin-top: 28px;
+        margin-bottom: 44px;
+        padding: 30px 16px 38px;
+        border-radius: 18px;
+    }
+
+    body.pagina-interna-body .pagina-servicos > h2{
+        font-size: 2.05rem;
+    }
+
+    body.pagina-interna-body .pagina-servicos > p{
+        font-size: .93rem;
+        line-height: 1.65;
+    }
+
+    body.pagina-interna-body .pagina-servicos .servicos-lista{
+        gap: 12px;
+        margin-top: 26px;
+    }
+
+    body.pagina-interna-body .pagina-servicos .servicos-lista article{
+        padding: 18px;
+    }
+
+    body.pagina-interna-body .pagina-servicos .servicos-lista article:hover{
+        transform: none;
+    }
+
+    body.pagina-interna-body .pagina-legal{
+        padding: 30px 16px 38px;
+    }
+
+    body.pagina-interna-body .pagina-sobre > h2{
+        font-size: 2.05rem;
+    }
+
+    body.pagina-interna-body .pagina-sobre > p{
+        font-size: .93rem;
+        line-height: 1.65;
+    }
+
+    body.pagina-interna-body .sobre-destaques{
+        margin-top: 28px;
+    }
+
+    body.pagina-interna-body .sobre-destaques article{
+        padding: 18px;
+    }
+
+    body.pagina-interna-body .sobre-destaques article:hover,
+    body.pagina-interna-body .processo-lista article:hover{
+        transform: none;
+    }
+
+    body.pagina-interna-body .sobre-destaques article,
+    body.pagina-interna-body .processo-lista article{
+        transition: none;
+    }
+
+    body.pagina-interna-body .pagina-sobre::before{
+        opacity: .55;
+        filter: blur(2px);
+    }
+
+    .pagina-principal .nav-header a{
+        flex-basis: 28%;
+        padding: 7px 5px;
+        font-size: .72rem;
+    }
+
+    .pagina-principal #Image-changer-container{
+        min-height: 430px;
+        padding: 12px;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:nth-child(1){
+        top: 12px;
+        left: 12px;
+        right: 51%;
+        height: 150px;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:nth-child(2){
+        top: 12px;
+        left: 51%;
+        right: 12px;
+        height: 150px;
+    }
+
+    .pagina-principal #Image-changer-container .Image-changer:nth-child(3){
+        top: 178px;
+        left: 12px;
+        right: 12px;
+        height: 205px;
+    }
+
+    .pagina-principal #section2,
+    .pagina-principal #section2-1{
+        height: 700px;
+    }
+
+    .pagina-principal #section1{
+        background-position: 62% center;
+    }
+
+    .pagina-principal #section2{
+        background-position: 48% center;
+    }
+
+    .pagina-principal #section2-1{
+        background-position: 62% center;
+    }
+
+    .publicos-grid{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto,
+    .pagina-principal #section2-1 .container-imagens-animadas .imagem-e-texto{
+        height: 600px;
+    }
+
+    .pagina-principal button#whatsapp{
+        right: 10px;
+        bottom: 12px;
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp,
+    .pagina-principal button#whatsapp .block-whatsapp:hover{
+        width: 52px;
+        height: 52px;
+    }
+
+    .pagina-principal button#whatsapp .block-whatsapp img,
+    .pagina-principal button#whatsapp .block-whatsapp:hover img{
+        width: 34px;
+    }
+
+    footer .Midia{
+        grid-template-columns: repeat(3, 52px);
+    }
+
+    footer .Midia .social{
+        width: 52px;
+        height: 52px;
+    }
+
+    body.pagina-interna-body footer{
+        min-height: 430px;
+    }
+
+    .pagina-principal #section3 .cliente-classificado{
+        min-height: 180px;
+        padding: 20px 16px 16px;
+    }
+
+    main{
+        margin-top: 24px;
+    }
+
+    main section h2{
+        font-size: 1.55rem;
+    }
+
+    main #section0{
+        height: auto;
+        min-height: 620px;
+    }
+
+    .pagina-interna{
+        width: calc(100% - 24px);
+        margin: 32px auto;
+        padding: 28px 16px;
+        border-radius: 18px;
+    }
+
+    .pagina-interna h2{
+        font-size: 2rem;
+    }
+
+    .servicos-lista{
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .servicos-lista article{
+        padding: 18px;
+    }
+}
+
+/* Telemoveis: 361px a 600px */
+@media (min-width: 361px) and (max-width: 600px){
+    .publicos-grid{
+        display: flex;
+        flex-direction: column;
+    }
+
+    header{
+        min-height: 92px;
+        height: auto;
+        padding: 16px;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .nav-header{
+        width: calc(100% - 32px);
+        margin: 16px;
+        flex-wrap: wrap;
+    }
+
+    .nav-header a{
+        padding: 9px 11px;
+    }
+
+    main #section0{
+        height: auto;
+        min-height: 600px;
+    }
+
+    #section1{
+        height: auto;
+        min-height: 780px;
+        padding-bottom: 34px;
+    }
+
+    #section2,
+    #section2-1{
+        height: 780px;
+    }
+
+    .pagina-principal #section1{
+        background-position: 58% center;
+    }
+
+    .pagina-principal #section2{
+        background-position: 52% center;
+    }
+
+    .pagina-principal #section2-1{
+        background-position: 58% center;
+    }
+
+    main section .container-imagens-animadas .imagem-e-texto{
+        height: 620px;
+    }
+
+    .pagina-interna{
+        width: calc(100% - 32px);
+        margin: 44px auto;
+        padding: 36px 22px;
+    }
+
+    .servicos-lista{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablets: 601px a 1024px */
+@media (min-width: 601px) and (max-width: 1024px){
+    header{
+        padding: 0 24px;
+    }
+
+    .nav-header{
+        width: min(90%, 760px);
+    }
+
+    main #section0{
+        height: auto;
+        min-height: 560px;
+    }
+
+    #section1{
+        height: 720px;
+    }
+
+    #section2,
+    #section2-1{
+        height: 820px;
+    }
+
+    .pagina-principal #section1,
+    .pagina-principal #section2,
+    .pagina-principal #section2-1,
+    .pagina-principal #section3{
+        background-position: center center;
+    }
+
+    main section .container-imagens-animadas .imagem-e-texto p,
+    #section2-1 .container-imagens-animadas .imagem-e-texto p{
+        width: min(52%, 480px);
+    }
+
+    .pagina-interna{
+        width: min(100% - 64px, 900px);
+        padding: 58px 48px;
+    }
+}
+
+/* Computadores: 1025px a 1440px */
+@media (min-width: 1025px) and (max-width: 1440px){
+    .pagina-interna{
+        width: min(100% - 80px, 1050px);
+    }
+
+    #section1,
+    #section2,
+    #section2-1{
+        min-height: 780px;
+    }
+}
+
+/* Ecras largos: acima de 1440px */
+@media (min-width: 1441px){
+    main section{
+        padding-left: max(15px, calc((100% - 1440px) / 2));
+        padding-right: max(15px, calc((100% - 1440px) / 2));
+    }
+
+    .nav-header{
+        max-width: 920px;
+    }
+
+    #section1,
+    #section2,
+    #section2-1,
+    #section3{
+        min-height: 900px;
+    }
+}
+
+/* O valor --viewport-height-unit evita problemas com barras do navegador mobile. */
+@supports (height: 100dvh){
+    body{
+        min-height: 100dvh;
+    }
+}
+
+@media (max-width: 600px){
+    .pagina-principal #section2 .container-imagens-animadas .imagem-e-texto .img1{
+        opacity: .2;
+        filter: saturate(.45) brightness(.3) contrast(1.08);
+    }
+
+    .pagina-principal #section2-1 .container-imagens-animadas .imagem-e-texto .img2{
+        opacity: .14;
+        filter: saturate(.45) brightness(.28) contrast(1.08);
+    }
+
+    /* As secções editoriais usam texto corrido, sem painéis flutuantes. */
+    #section2 .container-imagens-animadas .imagem-e-texto,
+    #section2-1 .container-imagens-animadas .imagem-e-texto{
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        height: auto !important;
+        min-height: 560px;
+        gap: clamp(28px, 5vw, 72px);
+        overflow: visible;
+        border: 0;
+    }
+
+    #section2 .container-imagens-animadas .section-copy,
+    #section2-1 .container-imagens-animadas .section-copy{
+        position: static !important;
+        inset: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        padding: 0 !important;
+        margin: 0;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        transform: none !important;
+        overflow: visible !important;
+    }
+
+    #section2 .container-imagens-animadas .section-copy p,
+    #section2-1 .container-imagens-animadas .section-copy p{
+        position: static !important;
+        inset: auto !important;
+        width: auto !important;
+        padding: 10px 0 10px 20px !important;
+        margin: 0 0 14px;
+        background: transparent !important;
+        border: 0 !important;
+        border-left: 2px solid rgba(85, 214, 255, .72) !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    #section2 .container-imagens-animadas .img1,
+    #section2-1 .container-imagens-animadas .img2{
+        position: static !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 440px;
+        object-fit: cover;
+    }
+
+    #section2 .publicos-grid{
+        grid-template-columns: 1fr;
+    }
+
+    #section2 .publico-item{
+        border: 0;
+        border-left: 2px solid rgba(85, 214, 255, .7);
+        border-radius: 0;
+        background: transparent;
+    }
+
+    @media (min-width: 641px) and (max-width: 900px){
+        #section2 .publicos-grid{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Ajustes finais de fluidez entre larguras */
+    @media (min-width: 601px){
+        .pagina-principal #Image-changer-container{
+            display: flex;
+            min-height: 390px;
+            height: auto;
+        }
+
+        .pagina-principal #Image-changer-container .Image-changer{
+            position: relative;
+            inset: auto;
+            width: 0;
+            height: 320px;
+            flex: 1 1 0 !important;
+            flex-grow: 1 !important;
+        }
+    }
+
+    @media (max-width: 1024px){
+        .pagina-principal #section1,
+        .pagina-principal #section2,
+        .pagina-principal #section2-1,
+        .pagina-principal #section3{
+            height: auto;
+        }
+    }
+
+    @media (max-width: 600px){
+        .pagina-principal #section1,
+        .pagina-principal #section2,
+        .pagina-principal #section2-1,
+        .pagina-principal #section3{
+            height: auto;
+        }
+
+        .pagina-principal #Image-changer-container{
+            min-height: 430px;
+            height: 430px;
+        }
+    }
+
+    @media (min-width: 601px){
+        .pagina-principal #Image-changer-container{
+            display: flex;
+            min-height: 390px;
+            height: auto;
+        }
+
+        .pagina-principal #Image-changer-container .Image-changer{
+            position: relative;
+            inset: auto;
+            width: 0;
+            height: 320px;
+            flex: 1 1 0 !important;
+            flex-grow: 1 !important;
+        }
+    }
+
+    @media (max-width: 1024px){
+        .pagina-principal #section1,
+        .pagina-principal #section2,
+        .pagina-principal #section2-1,
+        .pagina-principal #section3{
+            height: auto;
+        }
+    }
+
+    @media (max-width: 600px){
+        .pagina-principal #section1,
+        .pagina-principal #section2,
+        .pagina-principal #section2-1,
+        .pagina-principal #section3{
+            height: auto;
+        }
+
+        .pagina-principal #Image-changer-container{
+            min-height: 430px;
+            height: 430px;
+        }
+    }
+
+    #section2 .container-imagens-animadas .section-copy > p,
+    #section2-1 .container-imagens-animadas .section-copy > p{
+        padding: 10px 0 10px 20px !important;
+        border-left: 2px solid rgba(85, 214, 255, .72) !important;
+    }
+
+    @media (max-width: 600px){
+        #section2 .container-imagens-animadas .section-copy > p,
+        #section2-1 .container-imagens-animadas .section-copy > p{
+            padding-left: 16px !important;
+        }
+    }
+
+    @media (max-width: 640px){
+        #section2 .container-imagens-animadas .imagem-e-texto,
+        #section2-1 .container-imagens-animadas .imagem-e-texto{
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            min-height: 0;
+        }
+
+        #section2 .container-imagens-animadas .section-copy,
+        #section2-1 .container-imagens-animadas .section-copy{
+            width: 100% !important;
+            padding: 0 4px !important;
+        }
+
+        #section2 .container-imagens-animadas .img1,
+        #section2-1 .container-imagens-animadas .img2{
+            width: 100% !important;
+            min-height: 260px;
+            height: 300px !important;
+            order: 2;
+        }
+    }
+
+    #section2 .container-imagens-animadas .section-copy > p,
+    #section2-1 .container-imagens-animadas .section-copy > p{
+        padding: 10px 0 10px 20px !important;
+        border-left: 2px solid rgba(85, 214, 255, .72) !important;
+    }
+
+    .pagina-principal #section2-1 .container-imagens-animadas .imagem-e-texto .section-copy{
+        top: 50%;
+        max-height: calc(100% - 28px);
+        overflow-y: auto;
+    }
+}
+
+/* As secções editoriais usam texto corrido, sem painéis flutuantes. */
+#section2 .container-imagens-animadas .imagem-e-texto,
+#section2-1 .container-imagens-animadas .imagem-e-texto{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    height: auto !important;
+    min-height: 560px;
+    gap: clamp(28px, 5vw, 72px);
+    overflow: visible;
+    border: 0;
+}
+
+#section2 .container-imagens-animadas .section-copy,
+#section2-1 .container-imagens-animadas .section-copy{
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+#section2 .container-imagens-animadas .section-copy p,
+#section2-1 .container-imagens-animadas .section-copy p{
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    padding: 10px 0 10px 20px !important;
+    margin: 0 0 14px;
+    background: transparent !important;
+    border: 0 !important;
+    border-left: 2px solid rgba(85, 214, 255, .72) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+#section2 .container-imagens-animadas .img1,
+#section2-1 .container-imagens-animadas .img2{
+    position: static !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 440px;
+    object-fit: cover;
+}
+
+#section2 .publicos-grid{
+    grid-template-columns: 1fr;
+}
+
+#section2 .publico-item{
+    border: 0;
+    border-left: 2px solid rgba(85, 214, 255, .7);
+    border-radius: 0;
+    background: transparent;
+}
+
+@media (min-width: 641px) and (max-width: 900px){
+    #section2 .publicos-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px){
+    #section2 .container-imagens-animadas .imagem-e-texto,
+    #section2-1 .container-imagens-animadas .imagem-e-texto{
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        min-height: 0;
+    }
+
+    #section2 .container-imagens-animadas .section-copy,
+    #section2-1 .container-imagens-animadas .section-copy{
+        width: 100% !important;
+        padding: 0 4px !important;
+    }
+
+    #section2 .container-imagens-animadas .img1,
+    #section2-1 .container-imagens-animadas .img2{
+        width: 100% !important;
+        min-height: 260px;
+        height: 300px !important;
+        order: 2;
+    }
+}
